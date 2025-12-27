@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import Frame from './assets/Frame'
 import Keyboard from './assets/Keyboard'
-import { languages } from './assets/languages'
+import { zombie } from './assets/zombie'
 import Status from './assets/Status'
 import { getFarewellText, getRandomWord } from './assets/utils'
 import clsx from 'clsx'
@@ -23,7 +23,7 @@ function App() {
 //game finishers
   const isGameWon = 
     currentWord.split("").every(letter => guessedWord.includes(letter))
-  const isGameLost = wrongGuesses >= languages.length - 1
+  const isGameLost = wrongGuesses >= zombie.length
   const isGameOver = isGameLost || isGameWon
 
 
@@ -42,7 +42,7 @@ function App() {
   function wrongGuess(){
     setMsg(prev => {
       return(
-        getFarewellText(languages[wrongGuesses].name)
+        getFarewellText(wrongGuesses)
       )
     })
   }
@@ -72,11 +72,11 @@ function App() {
       />
       }
       <header>
-        <h1>Assembly: Endgame</h1>
-        <p>Guess the word in under 8 attempts to keep the programming world safe from assembly</p>
+        <h1>Escape the Horde</h1>
+        <p>Guess the password to the safe house. You have 8 attempts before they break in and eat your brains.</p>
       </header>
       <Status 
-      isGameOver={isGameOver} isGameLost={isGameLost} isGameWon={isGameWon} message={msg} 
+      isGameOver={isGameOver} isGameLost={isGameLost} isGameWon={isGameWon} message={msg} wrongGuesses={wrongGuesses} length={zombie.length}
       />
       <section className='languages'>
         <Frame  wrong={wrongGuesses}/>

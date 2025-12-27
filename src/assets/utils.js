@@ -6,22 +6,16 @@ export function getRandomWord(){
     return randomWord
 }
 
-export function getFarewellText(language) {
+export function getFarewellText(guessCount) { 
     const options = [
-        `Farewell, ${language}`,
-        `Adios, ${language}`,
-        `R.I.P., ${language}`,
-        `We'll miss you, ${language}`,
-        `Oh no, not ${language}!`,
-        `${language} bites the dust`,
-        `Gone but not forgotten, ${language}`,
-        `The end of ${language} as we know it`,
-        `Off into the sunset, ${language}`,
-        `${language}, it's been real`,
-        `${language}, your watch has ended`,
-        `${language} has left the building`
+        "The bat broke in two.",
+        "Your flashlight died.",
+        "There go the snacks.",
+        "Map lost.",
+        "Click. Click. Out of ammo.",
+        "Medic down!",
+        "NOT THE DOG! You monster!",
+        "Chomp. You are zombie food."
     ];
-
-    const randomIndex = Math.floor(Math.random() * options.length);
-    return options[randomIndex];
+    return options[guessCount];
 }

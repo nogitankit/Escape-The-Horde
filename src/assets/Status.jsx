@@ -1,7 +1,7 @@
 import clsx from "clsx"
 
 
-export default function Status({isGameOver, isGameLost, isGameWon, message}){
+export default function Status({isGameOver, isGameLost, isGameWon, message, wrongGuesses, length}) {
 
    function renderGameStatus() {
 
@@ -9,7 +9,7 @@ export default function Status({isGameOver, isGameLost, isGameWon, message}){
             return (
                 <>
                     <h2>You win!</h2>
-                    <p>Well done! 🎉</p>
+                    <p>You Escaped the horde.{wrongGuesses<length && ' The dog is safe!'}🎉</p>
                 </>
             )
         }
@@ -17,7 +17,7 @@ export default function Status({isGameOver, isGameLost, isGameWon, message}){
             return (
                 <>
                     <h2>Game over!</h2>
-                    <p>You lose! Better start learning Assembly 😭</p>
+                    <p>They ate your brain. You joined the undead. 🧟</p>
                 </>
             )
         }

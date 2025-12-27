@@ -18,10 +18,16 @@ header{
   align-items: center;
   flex-direction: column;
   max-width: 400px;
+  color: #f87171;
+}
+header > h1{
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 header > p{
   margin-top:0px;
-  color: rgba(142, 142, 142, 1);
+  color: #9ca3af; 
+  font-style: italic;
   text-align: center;
 }
 
@@ -36,21 +42,28 @@ header > p{
   justify-content: center;
 }
 .game-status.won{
-  background-color: rgb(17, 200, 105);
+  background-color: #10b981;
+  color: white;
+  border: 2px solid #059669;
 }
 .game-status.lost{
   background-color: rgba(186, 42, 42, 1);
 }
 .game-status.wrong{
-  background-color: rgba(122, 94, 167, 1);
+  background-color: #facc15;  /* Biohazard Yellow */
+  color: #451a03;
+  border: 2px dashed #a16207;
+  font-weight: bold;
 }
 .game-status > h2{
   margin-bottom: 5px;
   margin-top: 10px;
+  letter-spacing: 1px;
 }
 .game-status > p{
   margin-top: 0;
   margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .languages{
@@ -74,11 +87,14 @@ header > p{
 }
 
 .frame {
-  padding: 4.5px 4.5px;    
+  padding: 4.5px 8px;    
   border-radius: 6px;   
   font-weight: 600;
   font-size: 0.9rem;
-  user-select: none;     
+  user-select: none; 
+  border: 2px solid rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 0 rgba(0,0,0,0.4);   
+  transition: all 0.2s ease-in-out;
 }
 
 @keyframes shake {
@@ -90,8 +106,9 @@ header > p{
 }
 
 .frame.bad {
-  background-color: #323232; 
-  color: #555;
+  background-color: #27272a !important;
+  color: #71717a !important;
+  border: 1px solid #ef4444;
   text-decoration: line-through; 
   opacity: 0.7;
   animation: shake 0.5s ease-in-out;
@@ -133,19 +150,27 @@ header > p{
 }
 .key-letter{
   font-family: "Hanken Grotesk", Arial, sans-serif;
-  background-color: rgba(252, 186, 41, 1);
+  background-color: #4b5563;
+  color: #f3f4f6;
   padding: 6px;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(215, 215, 215, 1);
+  border: 1px solid #374151;
+  font-weight: bold;
   border-radius: 4px;
-
+  box-shadow: 0 2px 0 #1f2937;
+}
+.key-letter:hover {
+    background-color: #6b7280;
 }
 .key-letter.guessed-correct{
-  background-color: rgba(16, 169, 91, 1)
+  background-color: #10b981;
+  border-color: #059669
 }
 .key-letter.guessed{
-  background-color:rgba(236, 93, 73, 1)
+  background-color: #1f2937;
+    color: #6b7280;
+    opacity: 0.6;
 }
 
 .new-game{
@@ -156,6 +181,17 @@ header > p{
   border-radius: 4px;
   padding: 6px 12xp;
   border-width: 1px;
-  background-color: rgba(17, 181, 229, 1);
+  background-color: #ef4444;
+  color: white;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 0 #7f1d1d;
   font-family: "Hanken Grotesk", Arial, sans-serif;
+}
+.new-game:hover{
+  cursor: pointer;
+  background-color: #dc2626;
+}
+.new-game:active{
+  box-shadow: none;
+  transform: translateY(4px);
 }

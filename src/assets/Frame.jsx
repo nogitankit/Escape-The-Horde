@@ -1,9 +1,9 @@
-import { languages } from './languages';
+import { zombie } from './zombie';
 import clsx from 'clsx';
 
-export default function Frame({ wrong }) {
+export default function Frame({ wrong}) {
   
-  const languageList = languages.map((lang, index) => {
+  const languageList = zombie.map((lang, index) => {
     const isLost = index < wrong; 
     return (
       <div 
