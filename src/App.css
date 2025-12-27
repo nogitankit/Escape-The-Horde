@@ -106,8 +106,8 @@ header > p{
 }
 
 .frame.bad {
-  background-color: #27272a !important;
-  color: #71717a !important;
+  background-color: #27272a;
+  color: #71717a;
   border: 1px solid #ef4444;
   text-decoration: line-through; 
   opacity: 0.7;
@@ -177,7 +177,6 @@ header > p{
   margin-top: 30px;
   width: 228px;
   height: 40px;
-  gap: 6px;
   border-radius: 4px;
   padding: 6px 12xp;
   border-width: 1px;

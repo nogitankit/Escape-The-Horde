@@ -87,8 +87,6 @@ function App() {
      <Keyboard keyPressed={keyPressed} wrongGuess={wrongGuess} guessed={guessedWord} current ={currentWord} isGameOver={isGameOver}/>
      { isGameOver &&
       <button className='new-game' onClick={newGame} >New Game</button>}
-     
-      
     </main>
   )
 } 
