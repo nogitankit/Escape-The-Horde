@@ -4,21 +4,26 @@ import Frame from './assets/Frame'
 import Keyboard from './assets/Keyboard'
 import { languages } from './assets/languages'
 import Status from './assets/Status'
+import { getFarewellText } from './assets/utils'
 
 function App() {
   //state values
   const [currentWord, setCurrentWord] = React.useState("react")
   const [guessedWord, setGuessedWord] = React.useState([])
+  const [msg , setMsg] = React.useState("")
+
 
   const wrongGuessArray = guessedWord.filter(letter => !currentWord.includes(letter))
   const wrongGuesses = wrongGuessArray.length
   console.log(wrongGuesses)
+
 
 //game finishers
   const isGameWon = 
     currentWord.split("").every(letter => guessedWord.includes(letter))
   const isGameLost = wrongGuesses >= languages.length - 1
   const isGameOver = isGameLost || isGameWon
+
 
   const letters = currentWord.split("").map((char, index) => {
     return (
@@ -28,6 +33,14 @@ function App() {
     )
   })
 
+  function wrongGuess(){
+    setMsg(prev => {
+      return(
+        getFarewellText(languages[wrongGuesses].name)
+      )
+    })
+  }
+
   function keyPressed(key){
     setGuessedWord(prev => {
       return(
@@ -35,8 +48,7 @@ function App() {
       )
     })
   }
-  console.log(guessedWord)
-
+  console.log(msg)
 
   return (
     <main style={{display : 'flex', justifyContent : 'center', flexDirection : 'column', alignItems : 'center'}}>
@@ -45,7 +57,7 @@ function App() {
         <p>Guess the word in under 8 attempts to keep the programming world safe from assembly</p>
       </header>
       <Status 
-      isGameOver={isGameOver} isGameLost={isGameLost} isGameWon={isGameWon} 
+      isGameOver={isGameOver} isGameLost={isGameLost} isGameWon={isGameWon} message={msg} 
       />
       <section className='languages'>
         <Frame  wrong={wrongGuesses}/>
@@ -53,7 +65,7 @@ function App() {
       <section className='letters'>
         {letters}
       </section>
-     <Keyboard keyPressed={keyPressed} guessed={guessedWord} current ={currentWord}/>
+     <Keyboard keyPressed={keyPressed} wrongGuess={wrongGuess} guessed={guessedWord} current ={currentWord}/>
      { isGameOver &&
       <button className='new-game'>New Game</button>}
      

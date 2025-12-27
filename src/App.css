@@ -33,12 +33,16 @@ header > p{
   margin-top: 20px;
   width: 100%;
   min-height: 80px;
+  justify-content: center;
 }
 .game-status.won{
   background-color: rgba(16, 169, 91, 1);
 }
 .game-status.lost{
   background-color: rgba(186, 42, 42, 1);
+}
+.game-status.wrong{
+  background-color: rgba(122, 94, 167, 1);
 }
 .game-status > h2{
   margin-bottom: 5px;
