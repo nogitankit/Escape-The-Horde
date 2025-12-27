@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  background-color: #262626;
+  color: #D9D9D9;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 400px;
+}
+header > p{
+  margin-top:0px;
+  color: rgba(142, 142, 142, 1);
+  text-align: center;
+}
+
+.game-status{
+  border-radius: 4px;
+  background-color: rgba(16, 169, 91, 1);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 100%;
+}
+.game-status > h2{
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.game-status > p{
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.languages{
+  margin-top: 40px;
+  width: 266;
+  height: 51.5;
+  display: flex;
+  gap: 1.5px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.badge {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.frame {
+  padding: 4.5px 4.5px;    
+  border-radius: 6px;   
+  font-weight: 600;
+  font-size: 0.9rem;
+  user-select: none;     
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px) rotate(-5deg); } 
+  50% { transform: translateX(5px) rotate(5deg); }
+  75% { transform: translateX(-5px) rotate(-5deg); }
+  100% { transform: translateX(0); }
+}
+
+.frame.bad {
+  background-color: #323232; 
+  color: #555;
+  text-decoration: line-through; 
+  opacity: 0.7;
+  animation: shake 0.5s ease-in-out;
+}
+
+.letters{
+  margin-top: 40px;
+  width: 340px;
+  height: 50px;
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+
+}
+.letter{
+  color: rgba(249, 244, 218, 1);
+  background-color: rgba(50, 50, 50, 1);
+  border-bottom:rgba(249, 244, 218, 1) 1px solid;
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  user-select: none;
+} 
+.keyboard{
+  margin-top: 50px;
+  display: flex;
+  max-width: 480px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.key-letter{
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  background-color: rgba(252, 186, 41, 1);
+  padding: 6px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(215, 215, 215, 1);
+  border-radius: 4px;
+
+}
+.key-letter.guessed-correct{
+  background-color: rgba(16, 169, 91, 1)
+}
+.key-letter.guessed{
+  background-color:rgba(236, 93, 73, 1)
+}
+
+.new-game{
+  margin-top: 30px;
+  width: 228px;
+  height: 40px;
+  gap: 6px;
+  border-radius: 4px;
+  padding: 6px 12xp;
+  border-width: 1px;
+  background-color: rgba(17, 181, 229, 1);
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+}
